@@ -3,3 +3,141 @@
   padding: 0;
   margin: 0;
 }
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf')
+      format('woff2 supports variations'),
+    url('./assets/fonts/WorkSans-VariableFont_wght.ttf')
+      format('woff2-variations');
+  font-weight: 400 700;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+
+  --ff-primary: 'Work Sans';
+
+  --fw-bold: 700;
+  --fw-semi-bold: 600;
+  --fw-regular: 400;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-primary);
+  background-color: var(--light-pink);
+  background-image: url('./assets/images/background-pattern-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  color: var(--light-pink);
+  opacity: 0.7;
+}
+
+.container {
+  padding-inline: 1.5rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.main {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  height: calc-size(auto);
+}
+
+.header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.heading {
+  font-size: 2rem;
+  color: var(--dark-purple);
+  font-weight: var(--fw-bold);
+}
+
+.summary:hover h2 {
+  cursor: pointer;
+  color: purple;
+}
+
+.summary {
+  position: relative;
+  padding-block: 1.5rem;
+  padding-right: 3rem;
+}
+
+.summary h2::after {
+  content: url(./assets/images/icon-plus.svg);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.summary h2 {
+  font-size: 1rem;
+  font-weight: var(--fw-semi-bold);
+  color: var(--dark-purple);
+  text-align: left;
+}
+
+.accordion.open h2::after {
+  content: url(./assets/images/icon-minus.svg);
+}
+
+.accordion.open > .details {
+  display: block;
+}
+
+.accordion .details {
+  display: none;
+}
+
+.details p {
+  font-size: 0.9375rem;
+  font-weight: var(--fw-regular);
+  color: var(--grayish-purple);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url('./assets/images/background-pattern-desktop.svg');
+  }
+}
