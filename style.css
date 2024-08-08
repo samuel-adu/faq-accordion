@@ -80,13 +80,21 @@ hr {
   color: purple;
 }
 
-.summary {
+.accordion__btn {
+  border: none;
+  font-size: 1rem;
+  font-weight: var(--fw-semi-bold);
+  color: var(--dark-purple);
+  text-align: left;
+  padding-block: 1rem;
+  padding-right: 2.5rem;
+  outline-color: var(--dark-purple);
   position: relative;
-  padding-block: 1.5rem;
-  padding-right: 3rem;
+  background: none;
+  width: 100%;
 }
 
-.summary h2::after {
+.accordion__btn::after {
   content: url(./assets/images/icon-plus.svg);
   position: absolute;
   right: 0;
@@ -94,14 +102,7 @@ hr {
   transform: translateY(-50%);
 }
 
-.summary h2 {
-  font-size: 1rem;
-  font-weight: var(--fw-semi-bold);
-  color: var(--dark-purple);
-  text-align: left;
-}
-
-.accordion.open h2::after {
+.accordion.open .accordion__btn::after {
   content: url(./assets/images/icon-minus.svg);
 }
 
@@ -139,5 +140,9 @@ footer {
 @media (min-width: 768px) {
   body {
     background-image: url('./assets/images/background-pattern-desktop.svg');
+  }
+
+  .summary {
+    padding-block: 2rem;
   }
 }
