@@ -44,7 +44,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 1.5rem;
+  padding: 6.5rem 1.5rem 1.5rem;
   max-width: 600px;
   margin: auto;
 }
@@ -145,5 +145,9 @@ footer {
 
   .summary {
     padding-block: 2rem;
+  }
+
+  .heading {
+    font-size: 3rem;
   }
 }
